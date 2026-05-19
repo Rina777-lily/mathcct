@@ -1,1213 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>MY Time in Malaysia</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Time in Malaysia</title>
 
-<!-- MATHJAX -->
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  }
-};
-</script>
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<script
-id="MathJax-script"
-async
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
+  <style>
 
-<style>
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: "Arial", sans-serif;
-  }
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-  body{
-    background: linear-gradient(135deg, #fff1f7, #e6f7ff);
-    color:#333;
-  }
+    body{
+      font-family:'Poppins', sans-serif;
+      background:linear-gradient(to bottom right, #ffe6f0, #fff4e6);
+      color:#444;
+      line-height:1.7;
+      overflow-x:hidden;
+    }
 
-  .container{
-    width:92%;
-    max-width:1300px;
-    margin:auto;
-    padding:40px 10px;
-  }
+    /* HEADER */
 
-  /* HEADER */
-  .header{
-    text-align:center;
-    margin-bottom:40px;
-  }
+    header{
+      text-align:center;
+      padding:70px 20px;
+      background:linear-gradient(135deg, #ffb6d9, #ffd6a5);
+      color:white;
+      border-bottom-left-radius:40px;
+      border-bottom-right-radius:40px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+      margin-bottom:50px;
+    }
 
-  .header h1{
-    font-size:3rem;
-    color:#ff6fa9;
-    letter-spacing:1px;
-  }
+    header h1{
+      font-size:3rem;
+      font-weight:700;
+      text-shadow:2px 2px 5px rgba(0,0,0,0.15);
+    }
 
-  .header p{
-    font-size:1.2rem;
-    color:#666;
-    margin-top:8px;
-  }
+    /* MAIN CONTAINER */
 
-  /* GRID */
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:20px;
-  }
+    .container{
+      width:92%;
+      max-width:1400px;
+      margin:auto;
+      padding-bottom:60px;
+    }
 
-  /* CARD */
-  .card{
-    background:white;
-    border-radius:25px;
-    padding:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    transition:0.3s ease;
-    border:2px solid rgba(255,111,169,0.15);
-  }
+    /* GRID */
 
-  .card:hover{
-    transform:translateY(-6px) scale(1.02);
-    box-shadow:0 12px 25px rgba(255,111,169,0.25);
-  }
-
-  /* SECTION TITLE */
-  .card h2{
-    text-align:center;
-    font-size:1.3rem;
-    color:#ff6fa9;
-    margin-bottom:12px;
-  }
-
-  .card h2 a{
-    color:#ff6fa9;
-    text-decoration:none;
-  }
-
-  .card h2 a:hover{
-    text-decoration:underline;
-  }
-
-  /* IFRAME */
-  .iframe-box{
-    border-radius:18px;
-    overflow:hidden;
-    margin-bottom:15px;
-  }
-
-  iframe{
-    width:100%;
-    height:260px;
-    border:none;
-  }
-
-  /* TEXT */
-  .block{
-    margin-bottom:18px;
-  }
-
-  .block h3{
-    font-size:1rem;
-    color:#555;
-    margin-bottom:8px;
-  }
-
-  .block p{
-    font-size:0.92rem;
-    color:#777;
-    line-height:1.7;
-  }
-
-  /* RESPONSIVE */
-  @media(max-width:1024px){
     .grid{
-      grid-template-columns:repeat(2,1fr);
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:30px;
     }
 
-    .header h1{
-      font-size:2.5rem;
-    }
-  }
+    /* CARD */
 
-  @media(max-width:768px){
-    .grid{
-      grid-template-columns:1fr;
+    .card{
+      background:white;
+      border-radius:28px;
+      padding:25px;
+      box-shadow:0 10px 25px rgba(255,182,217,0.2);
+      border:3px solid #ffd7ea;
+      transition:0.3s ease;
+      position:relative;
+      overflow:hidden;
     }
 
-    .header h1{
-      font-size:2rem;
+    .card:hover{
+      transform:translateY(-8px) scale(1.02);
     }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      width:130px;
+      height:130px;
+      background:rgba(255,182,217,0.18);
+      border-radius:50%;
+      top:-40px;
+      right:-40px;
+    }
+
+    .card h2{
+      font-size:1.4rem;
+      color:#ff6fa5;
+      margin-bottom:18px;
+      position:relative;
+      z-index:2;
+    }
+
+    /* IFRAME */
 
     iframe{
-      height:220px;
+      width:100%;
+      height:260px;
+      border:none;
+      border-radius:18px;
+      background:#f1f1f1;
+      margin-bottom:20px;
+      position:relative;
+      z-index:2;
     }
-  }
 
-</style>
+    /* SUBHEADINGS */
+
+    .subheading{
+      font-size:1.05rem;
+      color:#ff8bb7;
+      margin-bottom:10px;
+      font-weight:600;
+      position:relative;
+      z-index:2;
+    }
+
+    /* PARAGRAPHS */
+
+    .card p{
+      font-size:0.95rem;
+      color:#666;
+      margin-bottom:18px;
+      position:relative;
+      z-index:2;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#ffb6d9;
+      color:white;
+      margin-top:60px;
+      border-top-left-radius:35px;
+      border-top-right-radius:35px;
+      font-weight:500;
+    }
+
+    /* TABLET */
+
+    @media (max-width: 1000px){
+
+      .grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+
+      header h1{
+        font-size:2.5rem;
+      }
+
+    }
+
+    /* PHONE */
+
+    @media (max-width: 700px){
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      header{
+        padding:55px 15px;
+      }
+
+      header h1{
+        font-size:2rem;
+      }
+
+      iframe{
+        height:220px;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <!-- MAIN HEADING -->
 
-  <!-- HEADER -->
-  <div class="header">
-    <h1>MY Time in Malaysia ✨</h1>
-    <p>Roti Tissu Absolute Value Function 🍯</p>
-  </div>
+  <header>
+    <h1>My Time in Malaysia</h1>
+  </header>
 
-  <!-- 3x3 GRID -->
-  <div class="grid">
+  <!-- GRID CONTAINER -->
 
-    <!-- CARD 1 -->
-    <div class="card">
+  <div class="container">
 
-      <h2>
-        <a href="https://www.desmos.com/calculator/hgsewxti6y" target="_blank">
-          Pink Figurehead - Logarithmic Function
-        </a>
-      </h2>
+    <div class="grid">
 
-      <div class="iframe-box">
-        <iframe
-          src="https://www.desmos.com/calculator/hgsewxti6y?embed"
-          width="500"
-          height="500"
-          style="border: 1px solid #ccc"
-          frameborder="0">
+      <!-- CARD 1 -->
+      <div class="card">
+        <h2>Roti Tissue Absolute Value Function ✨</h2>
+
+        <iframe 
+          src="https://example.com"
+          title="Desmos Graph">
         </iframe>
-      </div>
 
-      <div class="block">
-        <h3>Transformations</h3>
+        <div class="subheading">Understanding the Function 🌸</div>
 
         <p>
-          I took this photo in a makeup shop at Sunway Pyramid.
-          I chose this photo because it is my favourite makeup shop in Malaysia.
-          I really enjoy makeup and buying new products there,
-          so I always visit this shop whenever I go to Sunway Pyramid.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Integer vitae mauris sit amet magna luctus tincidunt.
         </p>
 
-        <p>
-          To model the pink figurehead appearing in the photograph,
-          I first identified that the shape closely resembles a logarithmic function.
-          Therefore, I selected the parent function
-          \( y=\log(x) \)
-          as the starting point.
-        </p>
+        <div class="subheading">Application in Real Life 🍞</div>
 
         <p>
-          From observing the orientation of the curve in the image,
-          I noticed that the graph decreases from left to right rather than increasing.
-          This indicated a reflection across the y-axis,
-          so I modified the function to
-          \( y=\log(-x) \)
-          to match the direction of the graph.
-        </p>
-
-        <p>
-          Initially, I found it difficult to determine the correct transformation
-          because the visible part of the curve was very small and looked different
-          from the parent logarithmic graph.
-          Since the graph appeared very flat and was positioned away from the
-          original parent function,
-          it was difficult to directly compare the two shapes.
-        </p>
-
-        <p>
-          After further analysis,
-          I realised that the function had undergone several transformations.
-          The negative sign inside the logarithm represents a reflection
-          across the y-axis,
-          causing the graph to decrease from left to right.
-        </p>
-
-        <p>
-          Next, I analysed the leading coefficient \(0.1\).
-          Since there is no negative sign before the coefficient,
-          there is no reflection across the x-axis.
-          Because \(0.1\) is less than \(1\),
-          the graph undergoes a vertical compression.
-          This transformation makes the graph significantly flatter
-          than the parent function.
-        </p>
-
-        <p>
-          I experimented with many different values in order to closely match
-          the curve shown in the photograph.
-          Larger values than \(0.1\) made the graph too steep,
-          while smaller values flattened the graph excessively.
-          Therefore, \(0.1\) produced the best fit for the photograph.
-        </p>
-
-        <p>
-          After determining the overall shape,
-          I applied translations to move the graph into the correct position.
-          I shifted the graph horizontally to the right so that the vertical
-          asymptote aligned with its position in the image.
-          Then, I applied a vertical translation upward so the curve passed
-          through important points in the photograph.
-        </p>
-
-        <p>
-          The graph initially appeared too low,
-          so I translated it upward by \(1.2\) units.
-          This resulted in the final function:
-        </p>
-
-        <p>
-          \[
-          y=0.1\log\bigl(-(x-0.6)+1.2\bigr)
-          \]
-        </p>
-
-        <p>
-          This equation closely models the shape shown in the photograph.
-        </p>
-
-      </div>
-
-      <div class="block">
-        <h3>Domain and Range</h3>
-
-        <p>
-          The domain of my function is:
-        </p>
-
-        <p>
-          \[
-          D=\{x\in\mathbb{R}\mid 0.43\le x\le 0.58\}
-          \]
-        </p>
-
-        <p>
-          I could not fit the equation to the shape in the photograph
-          while including the entire range of x-values,
-          so I restricted the domain to the interval
-          that best matched the visible curve.
-        </p>
-
-        <p>
-          The parent function \(y=\log(x)\) has the domain:
-        </p>
-
-        <p>
-          \[
-          x>0
-          \]
-        </p>
-
-        <p>
-          and the range:
-        </p>
-
-        <p>
-          \[
-          y\in\mathbb{R}
-          \]
-        </p>
-
-        <p>
-          This means the function is defined only for positive x-values
-          and can produce any real number.
-          The parent logarithmic function also has a vertical asymptote
-          at \(x=0\),
-          where the function is undefined.
-        </p>
-
-        <p>
-          After applying transformations,
-          my function also has a vertical asymptote.
-          However, the restricted interval used in my model
-          is relatively far from the asymptote,
-          so the discontinuity does not affect
-          the part of the graph being analysed.
-        </p>
-
-        <p>
-          Since the function is continuous on the restricted interval,
-          the range can be determined by evaluating the function
-          at the endpoints of the domain.
-          By substituting \(x=0.43\) and \(x=0.58\),
-          I obtained approximate y-values of \(1.12\) and \(1.03\).
-        </p>
-
-        <p>
-          Therefore, the approximate range is:
-        </p>
-
-        <p>
-          \[
-          R=\{y\in\mathbb{R}\mid 1.03\le y\le 1.12\}
-          \]
-        </p>
-
-      </div>
-
-    </div>
-
-   <!-- CARD 2 -->
-<div class="card">
-
-  <h2>
-    <a href="https://www.desmos.com/calculator/jlgvodoxg5" target="_blank">
-      Roof - Quadratic Reciprocal Function
-    </a>
-  </h2>
-
-  <div class="iframe-box">
-    <iframe
-      src="https://www.desmos.com/calculator/jlgvodoxg5?embed"
-      width="500"
-      height="500"
-      style="border: 1px solid #ccc"
-      frameborder="0">
-    </iframe>
-  </div>
-
-  <div class="block">
-
-    <h3>Transformations</h3>
-
-    <p>
-      I took this photo at a park in Malaysia.
-      This photograph is very memorable and important to me because
-      my family came to Malaysia to visit me,
-      and we spent time walking around together.
-      Whenever I look at this photo,
-      many happy memories come flooding back.
-    </p>
-
-    <p>
-      To model the roof appearing in the photograph,
-      I first identified that the shape closely resembles
-      a quadratic reciprocal function.
-      Therefore, I selected the parent function
-      \( y=\frac{1}{x^2} \)
-      as the starting point.
-    </p>
-
-    <p>
-      From observing the curve in the image,
-      I noticed that the graph had a similar overall shape
-      to the reciprocal function,
-      with two curves approaching a vertical asymptote.
-      However, the graph appeared much wider than the parent function,
-      which indicated that a vertical compression was required.
-    </p>
-
-    <p>
-      Initially, I found it difficult to determine
-      the correct compression ratio and compare the shapes accurately.
-      To simplify the modelling process,
-      I focused first on matching the overall shape of the graph
-      before applying translations.
-    </p>
-
-    <p>
-      When comparing the graph with the parent function,
-      I noticed how quickly the edges moved away from the asymptotes.
-      Through experimentation and observation in Desmos,
-      I determined that the graph required significant vertical compression.
-      After testing different coefficients,
-      I found that the factor
-      \( \frac{1.8}{100} \)
-      produced the closest fit to the roof in the photograph.
-    </p>
-
-    <p>
-      I also noticed that the graph did not approach the x-axis directly.
-      Instead, adding a constant term to the denominator
-      adjusted the width and shape of the curve.
-      Therefore, I added \(3\) to the denominator,
-      which helped the function better match the roof structure
-      and prevented the function from becoming undefined
-      near the translated asymptote.
-    </p>
-
-    <p>
-      After determining the overall shape,
-      I applied translations to position the graph correctly.
-      I shifted the graph \(0.6\) units to the right,
-      resulting in the term
-      \( (x-0.6)^2 \).
-    </p>
-
-    <p>
-      Then, I translated the graph upward by \(1.5\) units
-      so that the curve aligned more closely
-      with the visible section of the roof.
-    </p>
-
-    <p>
-      The final function obtained was:
-    </p>
-
-    <p>
-      \[
-      y=\frac{1.8}{100(x-0.6)^2+3}+1.5
-      \]
-    </p>
-
-    <p>
-      This equation closely models the shape shown in the photograph.
-    </p>
-
-    <p>
-      <strong>Summary of Transformations</strong>
-    </p>
-
-    <p>
-      Parent function:
-    </p>
-
-    <p>
-      \[
-      y=\frac{1}{x^2}
-      \]
-    </p>
-
-    <p>
-      Vertical compression by a factor of \(1.8\):
-    </p>
-
-    <p>
-      \[
-      y=\frac{1.8}{x^2}
-      \]
-    </p>
-
-    <p>
-      Horizontal compression caused by the factor of \(100\):
-    </p>
-
-    <p>
-      \[
-      y=\frac{1.8}{100x^2}
-      \]
-    </p>
-
-    <p>
-      Addition of \(+3\) in the denominator:
-    </p>
-
-    <p>
-      \[
-      y=\frac{1.8}{100x^2+3}
-      \]
-    </p>
-
-    <p>
-      Horizontal translation \(0.6\) units to the right:
-    </p>
-
-    <p>
-      \[
-      y=\frac{1.8}{100(x-0.6)^2+3}
-      \]
-    </p>
-
-    <p>
-      Vertical translation \(1.5\) units upward:
-    </p>
-
-    <p>
-      \[
-      y=\frac{1.8}{100(x-0.6)^2+3}+1.5
-      \]
-    </p>
-
-  </div>
-
-  <div class="block">
-
-    <h3>Domain and Range</h3>
-
-    <p>
-      The domain of my function is restricted to the visible portion
-      of the roof shown in the photograph:
-    </p>
-
-    <p>
-      \[
-      D=\{x\in\mathbb{R}\mid 0.367\le x\le 0.85\}
-      \]
-    </p>
-
-    <p>
-      I limited the domain because only part of the roof
-      was visible in the image.
-      If I had taken the photograph from a closer distance,
-      the roof would have appeared larger,
-      allowing the graph to fit the structure more accurately.
-      Therefore, my model only represents
-      the visible section captured in the photograph.
-    </p>
-
-    <p>
-      The parent function
-      \( y=\frac{1}{x^2} \)
-      has the domain:
-    </p>
-
-    <p>
-      \[
-      D=\{x\in\mathbb{R}\mid x\ne0\}
-      \]
-    </p>
-
-    <p>
-      and the range:
-    </p>
-
-    <p>
-      \[
-      R=\{y\in\mathbb{R}\mid y>0\}
-      \]
-    </p>
-
-    <p>
-      This means the function is defined for all real numbers
-      except \(x=0\),
-      and the output values are always positive.
-      The graph also has a vertical asymptote at \(x=0\),
-      where the function is undefined.
-    </p>
-
-    <p>
-      After applying transformations,
-      my function also contains an asymptotic feature.
-      However, since the restricted interval
-      \(0.367\le x\le0.85\)
-      is completely away from the asymptote,
-      the undefined behaviour does not affect my model.
-    </p>
-
-    <p>
-      Since the function is continuous on the restricted interval,
-      the range can be determined by evaluating the function
-      at the endpoints of the domain.
-      By substituting \(x=0.367\) and \(x=0.85\),
-      I obtained approximate output values of
-      \(1.71\) and \(1.695\).
-    </p>
-
-    <p>
-      Therefore, the approximate range of the function is:
-    </p>
-
-    <p>
-      \[
-      R=\{y\in\mathbb{R}\mid 1.695\le y\le1.71\}
-      \]
-    </p>
-
-  </div>
-
-</div>
-    <!-- CARD 3 -->
-    <div class="card"><h2>Section 3</h2>
-      <div class="iframe-box"><iframe src="https://www.desmos.com/calculator"></iframe></div>
-      <div class="block"><h3>Little Idea</h3><p>cute text ✨</p></div>
-      <div class="block"><h3>Observation</h3><p>cute text 🌷</p></div>
-    </div>
-
-    <!-- CARD 4 -->
-    <div class="card"><h2>Section 4</h2>
-      <div class="iframe-box"><iframe src="https://www.desmos.com/calculator"></iframe></div>
-      <div class="block"><h3>Little Idea</h3><p>cute text ✨</p></div>
-      <div class="block"><h3>Observation</h3><p>cute text 🌷</p></div>
-    </div>
-
-    <!-- CARD 5 -->
-    <div class="card"><h2>Section 5</h2>
-      <div class="iframe-box"><iframe src="https://www.desmos.com/calculator"></iframe></div>
-      <div class="block"><h3>Little Idea</h3><p>cute text ✨</p></div>
-      <div class="block"><h3>Observation</h3><p>cute text 🌷</p></div>
-    </div>
-
- 
-      
-<! -- CARD 6 -->
-<!-- MATHJAX -->
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['\\[', '\\]']],
-    processEscapes: true
-  }
-};
-</script>
-
-<script
-id="MathJax-script"
-async
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
-<style>
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: "Arial", sans-serif;
-  }
-
-  body{
-    background: linear-gradient(135deg, #fff1f7, #e6f7ff);
-    color:#333;
-  }
-
-  .container{
-    width:92%;
-    max-width:1300px;
-    margin:auto;
-    padding:40px 10px;
-  }
-
-  .header{
-    text-align:center;
-    margin-bottom:40px;
-  }
-
-  .header h1{
-    font-size:3rem;
-    color:#ff6fa9;
-    letter-spacing:1px;
-  }
-
-  .header p{
-    font-size:1.2rem;
-    color:#666;
-    margin-top:8px;
-  }
-
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:20px;
-  }
-
-  .card{
-    background:white;
-    border-radius:25px;
-    padding:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    transition:0.3s ease;
-    border:2px solid rgba(255,111,169,0.15);
-  }
-
-  .card:hover{
-    transform:translateY(-6px) scale(1.02);
-  }
-
-  .card h2{
-    text-align:center;
-    font-size:1.3rem;
-    color:#ff6fa9;
-    margin-bottom:12px;
-  }
-
-  .iframe-box{
-    border-radius:18px;
-    overflow:hidden;
-    margin-bottom:15px;
-  }
-
-  iframe{
-    width:100%;
-    height:260px;
-    border:none;
-  }
-
-  .block{
-    margin-bottom:18px;
-  }
-
-  .block h3{
-    font-size:1rem;
-    color:#555;
-    margin-bottom:8px;
-  }
-
-  .block p{
-    font-size:0.92rem;
-    color:#777;
-    line-height:1.7;
-  }
-
-  @media(max-width:1024px){
-    .grid{grid-template-columns:repeat(2,1fr);}
-  }
-
-  @media(max-width:768px){
-    .grid{grid-template-columns:1fr;}
-  }
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
- 
-
-  <div class="grid">
-
-    <!-- CARD 1 & 2 unchanged (omitted here for brevity) -->
-
-    <!-- CARD 6 UPDATED -->
-    <div class="card">
-
-      <h2>
-        <a href="https://www.desmos.com/calculator/ox7z9cui9d" target="_blank">
-          The Unique Book - Trigonometric Function with an Asymptote
-        </a>
-      </h2>
-
-      <div class="iframe-box">
-        <iframe
-          src="https://www.desmos.com/calculator/ox7z9cui9d?embed"
-          width="500"
-          height="500"
-          frameborder="0">
-        </iframe>
-      </div>
-
-      <div class="block">
-        <h3>Transformations</h3>
-
-        <p>
-          I chose this image because the wave pattern on the book cover reminded me of trigonometric graphs.
-          The repeating curves and asymptotic behaviour closely resemble a cosecant function, so I selected
-          the parent function \(y=\csc(x)\) as my starting point.
-        </p>
-
-        <p>
-          The graph opens downward rather than upward, so I applied a reflection in the x-axis.
-          This produced a negative coefficient, giving a vertically reflected cosecant curve.
-        </p>
-
-        <p>
-          Next, I adjusted the period by modifying the inside coefficient. By experimenting in Desmos, I found
-          that a horizontal scaling factor was needed to match the spacing of the repeating waves.
-        </p>
-
-        <p>
-          After refining the shape, I applied translations to position the graph over the image correctly.
-          The final model became:
-        </p>
-
-        <p>
-          \[
-          y=-10.6\,\csc\bigl(-0.5(x+1.27)\bigr)+2.3
-          \]
-        </p>
-
-        <p>
-          This transformation includes reflection, vertical stretch, horizontal scaling, and translations.
+          Vestibulum ante ipsum primis in faucibus orci luctus et 
+          ultrices posuere cubilia curae.
         </p>
       </div>
 
-      <div class="block">
-        <h3>Summary of Transformations</h3>
+      <!-- CARD 2 -->
+      <div class="card">
+        <h2>Roti Tissue Absolute Value Function ✨</h2>
+
+        <iframe src="https://example.com"></iframe>
+
+        <div class="subheading">Understanding the Function 🌸</div>
 
         <p>
-          • Reflection across the x-axis<br>
-          • Vertical stretch by a factor of 10.6<br>
-          • Horizontal stretch/compression due to coefficient -0.5<br>
-          • Horizontal translation of 1.27 units<br>
-          • Vertical translation of 2.3 units
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Integer vitae mauris sit amet magna luctus tincidunt.
+        </p>
+
+        <div class="subheading">Application in Real Life 🍞</div>
+
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et 
+          ultrices posuere cubilia curae.
         </p>
       </div>
 
-      <div class="block">
-        <h3>Domain and Range</h3>
+      <!-- CARD 3 -->
+      <div class="card">
+        <h2>Roti Tissue Absolute Value Function ✨</h2>
+
+        <iframe src="https://example.com"></iframe>
+
+        <div class="subheading">Understanding the Function 🌸</div>
 
         <p>
-          The domain is restricted to the visible interval of the design:
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Integer vitae mauris sit amet magna luctus tincidunt.
         </p>
+
+        <div class="subheading">Application in Real Life 🍞</div>
 
         <p>
-          \[
-          D=\{x\in\mathbb{R}\mid 7.4 < x < 14.5\}
-          \]
+          Vestibulum ante ipsum primis in faucibus orci luctus et 
+          ultrices posuere cubilia curae.
         </p>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="card">
+        <h2>Roti Tissue Absolute Value Function ✨</h2>
+
+        <iframe src="https://example.com"></iframe>
+
+        <div class="subheading">Understanding the Function 🌸</div>
 
         <p>
-          The parent function \(y=\csc(x)\) is undefined when \(\sin(x)=0\), which creates vertical asymptotes at
-          \(x=n\pi\), where \(n\in\mathbb{Z}\).
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Integer vitae mauris sit amet magna luctus tincidunt.
         </p>
+
+        <div class="subheading">Application in Real Life 🍞</div>
 
         <p>
-          Its range is:
+          Vestibulum ante ipsum primis in faucibus orci luctus et 
+          ultrices posuere cubilia curae.
         </p>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="card">
+        <h2>Roti Tissue Absolute Value Function ✨</h2>
+
+        <iframe src="https://example.com"></iframe>
+
+        <div class="subheading">Understanding the Function 🌸</div>
 
         <p>
-          \[
-          R=\{y\in\mathbb{R}\mid y\le -1 \text{ or } y\ge 1\}
-          \]
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Integer vitae mauris sit amet magna luctus tincidunt.
         </p>
+
+        <div class="subheading">Application in Real Life 🍞</div>
 
         <p>
-          After transformations and restricting the domain, only a visible portion of the curve is modelled.
-          Evaluating the endpoints gives approximate values, producing the range:
+          Vestibulum ante ipsum primis in faucibus orci luctus et 
+          ultrices posuere cubilia curae.
         </p>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="card">
+        <h2>Roti Tissue Absolute Value Function ✨</h2>
+
+        <iframe src="https://example.com"></iframe>
+
+        <div class="subheading">Understanding the Function 🌸</div>
 
         <p>
-          \[
-          R\approx \{y\in\mathbb{R}\mid 68.90 < y < 82.42\}
-          \]
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Integer vitae mauris sit amet magna luctus tincidunt.
         </p>
 
+        <div class="subheading">Application in Real Life 🍞</div>
+
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et 
+          ultrices posuere cubilia curae.
+        </p>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="card">
+        <h2>Roti Tissue Absolute Value Function ✨</h2>
+
+        <iframe src="https://example.com"></iframe>
+
+        <div class="subheading">Understanding the Function 🌸</div>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Integer vitae mauris sit amet magna luctus tincidunt.
+        </p>
+
+        <div class="subheading">Application in Real Life 🍞</div>
+
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et 
+          ultrices posuere cubilia curae.
+        </p>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="card">
+        <h2>Roti Tissue Absolute Value Function ✨</h2>
+
+        <iframe src="https://example.com"></iframe>
+
+        <div class="subheading">Understanding the Function 🌸</div>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Integer vitae mauris sit amet magna luctus tincidunt.
+        </p>
+
+        <div class="subheading">Application in Real Life 🍞</div>
+
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et 
+          ultrices posuere cubilia curae.
+        </p>
+      </div>
+
+      <!-- CARD 9 -->
+      <div class="card">
+        <h2>Roti Tissue Absolute Value Function ✨</h2>
+
+        <iframe src="https://example.com"></iframe>
+
+        <div class="subheading">Understanding the Function 🌸</div>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Integer vitae mauris sit amet magna luctus tincidunt.
+        </p>
+
+        <div class="subheading">Application in Real Life 🍞</div>
+
+        <p>
+          Vestibulum ante ipsum primis in faucibus orci luctus et 
+          ultrices posuere cubilia curae.
+        </p>
       </div>
 
     </div>
 
   </div>
-</div>
 
-</body>
-</html></div>
+  <!-- FOOTER -->
 
-   <!-- CARD 7 -->
-<div class="card">
-
-  <h2>
-    <a href="https://www.desmos.com/calculator/3j8ehiilw5" target="_blank">
-      Historical Places - Exponential Function
-    </a>
-  </h2>
-
-  <div class="iframe-box">
-    <iframe src="https://www.desmos.com/calculator/3j8ehiilw5?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
-  </div>
-
-  <div class="block">
-
-    <h3>Transformations</h3>
-
-    <p>
-      I chose this photo because it captures one of my favourite memories
-      from this year. My childhood friend came to Malaysia,
-      and together we visited several traditional places.
-      This photograph reminds me of the enjoyable time we spent exploring
-      those places together.
-    </p>
-
-    <p>
-      To model the shape shown in the photograph,
-      I first identified that it closely resembles an exponential function.
-      Therefore, I selected the parent function
-      \( y=b^x \)
-      as the starting point.
-    </p>
-
-    <p>
-      From observing the orientation of the curve in the image,
-      I noticed that the graph increases outward from the centre of the mirror.
-      The curve grows on both the left and right sides,
-      creating a symmetrical shape.
-      This indicated that transformations were needed so that the graph
-      would bend downward and better match the outline of the mirror
-      instead of behaving like a standard increasing exponential function.
-    </p>
-
-    <p>
-      Initially, it was difficult to determine the correct stretch
-      and position because the curve was located far from the origin
-      and only part of the full shape was visible in the image.
-      To simplify the modelling process,
-      I first focused on matching the overall curvature of the graph
-      before applying translations.
-    </p>
-
-    <p>
-      By gradually adjusting the values in Desmos,
-      I found that a vertical stretch was necessary for the curve
-      to closely follow the outline of the mirror.
-      After determining the general shape,
-      I translated the graph horizontally and vertically
-      so that it aligned with the mirror frame.
-    </p>
-
-    <p>
-      I also restricted the domain so that only the visible portion
-      of the curve appeared on the graph.
-      This allowed the function to model the mirror accurately
-      without extending beyond the photographed section.
-    </p>
-
-    <p>
-      The final function obtained was:
-    </p>
-
-    <p>
-      \[
-      y=33^{1.3(x-1.06)}
-      \]
-    </p>
-
-    <p>
-      which closely models the shape shown in the photograph.
-    </p>
-
-    <p>
-      <strong>Summary of Transformations</strong>
-    </p>
-
-    <p>
-      Vertical stretch by a factor of \(33\):
-    </p>
-
-    <p>
-      \[
-      y=33^x
-      \]
-    </p>
-
-    <p>
-      Horizontal compression by a factor of \(1.3\):
-    </p>
-
-    <p>
-      \[
-      y=33^{1.3x}
-      \]
-    </p>
-
-    <p>
-      Horizontal translation \(1.06\) units to the right:
-    </p>
-
-    <p>
-      \[
-      y=33^{1.3(x-1.06)}
-      \]
-    </p>
-
-  </div>
-
-  <div class="block">
-
-    <h3>Domain and Range</h3>
-
-    <p>
-      The domain of my function is restricted to the visible section
-      of the mirror:
-    </p>
-
-    <p>
-      \[
-      D=\{x\in\mathbb{R}\mid 0.3<x<0.9\}
-      \]
-    </p>
-
-    <p>
-      I limited the domain because the full curve was not completely visible
-      in the photograph.
-      Therefore, the model only represents the section of the mirror
-      captured in the image.
-    </p>
-
-    <p>
-      The parent exponential function
-      \( y=33^x \)
-      has a domain of all real numbers:
-    </p>
-
-    <p>
-      \[
-      D=\{x\in\mathbb{R}\}
-      \]
-    </p>
-
-    <p>
-      and a range of positive real numbers:
-    </p>
-
-    <p>
-      \[
-      R=\{y\in\mathbb{R}\mid y>0\}
-      \]
-    </p>
-
-    <p>
-      The function also has a horizontal asymptote at
-      \( y=0 \),
-      which the graph approaches but never reaches.
-    </p>
-
-    <p>
-      After applying transformations and restricting the domain,
-      the graph only represents the small interval needed
-      to fit the visible outline of the mirror.
-    </p>
-
-    <p>
-      Since the graph is continuous on the restricted interval,
-      the range can be estimated by evaluating the function
-      at the endpoints of the domain.
-      By substituting \(x=0.3\) and \(x=0.9\),
-      I obtained approximate output values of \(0.032\) and \(0.483\).
-    </p>
-
-    <p>
-      Therefore, the approximate range of the function is:
-    </p>
-
-    <p>
-      \[
-      R=\{y\in\mathbb{R}\mid 0.032\le y\le 0.483\}
-      \]
-    </p>
-
-    <p>
-      In hindsight, I would have taken the photograph
-      from a straighter angle so that the entire mirror frame
-      could be captured more clearly.
-      This would allow the mathematical model to represent
-      the complete curve more accurately
-      rather than only the visible section.
-    </p>
-
-  </div>
-
-</div>
-
-    <!-- CARD 8 -->
-    <div class="card"><h2><a href="https://www.desmos.com/calculator/ny6uk4wl98">My arms-absolute value function</a></h2>
-      <div class="iframe-box"><iframe src="https://www.desmos.com/calculator/ny6uk4wl98?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe></div>
-      <div class="block">
-  <h3>Transformations</h3>
-
-  <p>
-    I took this photo with my friend at my study table in Sunway College.
-    This table holds many memories of my academic journey, including long hours of revision,
-    assignment preparation, and exam study sessions. It represents both hard work and personal growth.
-  </p>
-
-  <p>
-    To model the shape of my arms shown in the photograph, I identified that the curve
-    closely resembles an absolute value function. Therefore, I selected the parent function
-    \( y = |x| \) as the starting point.
-  </p>
-
-  <p>
-    The graph formed a V-shape, which confirmed that an absolute value model was appropriate.
-    However, compared to the parent function, the shape appeared slightly steeper and narrower.
-    This indicated a vertical stretch, so I applied a factor of \(1.1\), giving:
-    \( y = 1.1|x| \).
-  </p>
-
-  <p>
-    Next, I observed that the graph was also slightly compressed horizontally.
-    To adjust this, I applied a horizontal scaling factor of \(0.8\) inside the absolute value,
-    producing:
-    \( y = 1.1|0.8x| \).
-  </p>
-
-  <p>
-    Finally, I translated the graph so it aligned correctly with the position of my arms in the image.
-    I shifted it \(0.015\) units to the right and \(0.225\) units upward, resulting in the final model:
-  </p>
-
-  <p>
-    \[
-    y = 1.1|0.8(x - 0.015)| + 0.225
-    \]
-  </p>
-
-  <p>
-    This function closely matches the shape and position of my arms in the photograph.
-  </p>
-</div>
-
-<div class="block">
-  <h3>Summary of Transformations</h3>
-
-  <p>
-    • Vertical stretch: \( y = |x| \rightarrow y = 1.1|x| \)<br>
-    • Horizontal scaling: \( y = 1.1|x| \rightarrow y = 1.1|0.8x| \)<br>
-    • Horizontal translation: \( y = 1.1|0.8x| \rightarrow y = 1.1|0.8(x - 0.015)| \)<br>
-    • Vertical translation: \( y = 1.1|0.8(x - 0.015)| \rightarrow y = 1.1|0.8(x - 0.015)| + 0.225 \)
-  </p>
-</div>
-
-<div class="block">
-  <h3>Domain and Range</h3>
-
-  <p>
-    The domain of my function is:
-  </p>
-
-  <p>
-    \[
-    D = \{x \in \mathbb{R} \mid -0.36 \le x \le 0.15\}
-    \]
-  </p>
-
-  <p>
-    I restricted the domain to match the visible section of my arms in the photograph.
-    Because the photo only captures part of the full shape, the model is valid only within this interval.
-  </p>
-
-  <p>
-    The parent function \( y = |x| \) has:
-  </p>
-
-  <p>
-    \[
-    D = \mathbb{R}, \quad R = \{y \in \mathbb{R} \mid y \ge 0\}
-    \]
-  </p>
-
-  <p>
-    It is defined for all real numbers and produces only non-negative values.
-    It has no asymptotes because it is continuous everywhere.
-  </p>
-
-  <p>
-    Since the function is continuous on the restricted domain,
-    the range can be found by evaluating the endpoints.
-    Substituting \(x = -0.36\) and \(x = 0.15\) gives approximately:
-    \(y \approx 0.558\) and \(y \approx 0.3405\).
-  </p>
-
-  <p>
-    Therefore, the range is:
-  </p>
-
-  <p>
-    \[
-    R = \{y \in \mathbb{R} \mid 0.3405 \le y \le 0.558\}
-    \]
-  </p>
-</div>
-    </div>
-
-    <!-- CARD 9 -->
-    <div class="card"><h2>Section 9</h2>
-      <div class="iframe-box"><iframe src="https://www.desmos.com/calculator"></iframe></div>
-      <div class="block"><h3>Little Idea</h3><p>cute text ✨</p></div>
-      <div class="block"><h3>Observation</h3><p>cute text 🌷</p></div>
-    </div>
-
-  </div>
-
-</div>
+  <footer>
+    © 2026 My Time in Malaysia ✨
+  </footer>
 
 </body>
 </html>
-
