@@ -1150,137 +1150,6 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 
 </div>
 
- 
-      
-<! -- CARD 6 -->
-<!-- MATHJAX -->
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['\\[', '\\]']],
-    processEscapes: true
-  }
-};
-</script>
-
-<script
-id="MathJax-script"
-async
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
-<style>
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: "Arial", sans-serif;
-  }
-
-  body{
-    background: linear-gradient(135deg, #fff1f7, #e6f7ff);
-    color:#333;
-  }
-
-  .container{
-    width:92%;
-    max-width:1300px;
-    margin:auto;
-    padding:40px 10px;
-  }
-
-  .header{
-    text-align:center;
-    margin-bottom:40px;
-  }
-
-  .header h1{
-    font-size:3rem;
-    color:#ff6fa9;
-    letter-spacing:1px;
-  }
-
-  .header p{
-    font-size:1.2rem;
-    color:#666;
-    margin-top:8px;
-  }
-
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:20px;
-  }
-
-  .card{
-    background:white;
-    border-radius:25px;
-    padding:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    transition:0.3s ease;
-    border:2px solid rgba(255,111,169,0.15);
-  }
-
-  .card:hover{
-    transform:translateY(-6px) scale(1.02);
-  }
-
-  .card h2{
-    text-align:center;
-    font-size:1.3rem;
-    color:#ff6fa9;
-    margin-bottom:12px;
-  }
-
-  .iframe-box{
-    border-radius:18px;
-    overflow:hidden;
-    margin-bottom:15px;
-  }
-
-  iframe{
-    width:100%;
-    height:260px;
-    border:none;
-  }
-
-  .block{
-    margin-bottom:18px;
-  }
-
-  .block h3{
-    font-size:1rem;
-    color:#555;
-    margin-bottom:8px;
-  }
-
-  .block p{
-    font-size:0.92rem;
-    color:#777;
-    line-height:1.7;
-  }
-
-  @media(max-width:1024px){
-    .grid{grid-template-columns:repeat(2,1fr);}
-  }
-
-  @media(max-width:768px){
-    .grid{grid-template-columns:1fr;}
-  }
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
- 
-
-  <div class="grid">
-
-    <!-- CARD 1 & 2 unchanged (omitted here for brevity) -->
 
     <!-- CARD 6 UPDATED -->
     <div class="card">
@@ -1713,11 +1582,159 @@ src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </div>
 
     <!-- CARD 9 -->
-    <div class="card"><h2>Section 9</h2>
-      <div class="iframe-box"><iframe src="https://www.desmos.com/calculator"></iframe></div>
-      <div class="block"><h3>Little Idea</h3><p>cute text ✨</p></div>
-      <div class="block"><h3>Observation</h3><p>cute text 🌷</p></div>
-    </div>
+<div class="card">
+
+  <h2>
+    <a href="https://www.desmos.com/calculator/ntvbuhkgf9" target="_blank">
+      Peace Sign - Cosine Function
+    </a>
+  </h2>
+
+  <div class="iframe-box">
+    <iframe
+      src="https://www.desmos.com/calculator/ntvbuhkgf9?embed"
+      width="500"
+      height="500"
+      style="border: 1px solid #ccc"
+      frameborder="0">
+    </iframe>
+  </div>
+
+  <div class="block">
+
+    <h3>Transformations</h3>
+
+    <p>
+      I chose this photograph because the repeating vertical motion
+      of the peace sign gesture closely resembled a cosine graph.
+      The smooth oscillating movement matched the repeating pattern
+      of a trigonometric function.
+      Therefore, I selected the parent function
+      \( y=\cos(x) \)
+      as the starting point.
+    </p>
+
+    <p>
+      To fit the scale and position of the gesture in the photograph,
+      I applied several transformations to the parent cosine function.
+    </p>
+
+    <p>
+      First, I applied a vertical compression with an amplitude of
+      \(0.8\).
+      Since the amplitude is less than \(1\),
+      the graph becomes vertically compressed,
+      which better matched the smaller range of motion
+      of my hand in the image.
+    </p>
+
+    <p>
+      Next, I adjusted the period using the coefficient
+      \(-9.5\)
+      inside the cosine function.
+      This caused a horizontal compression,
+      making the wave repeat more quickly
+      to match the fast motion of the gesture.
+      The negative sign also reflects the graph across the y-axis,
+      allowing the direction of the wave
+      to align more accurately with the photograph.
+    </p>
+
+    <p>
+      I then translated the graph horizontally by
+      \(1.245\) units to the right
+      so that the peak of the cosine curve aligned
+      with the position of my hand.
+    </p>
+
+    <p>
+      Finally, I translated the graph upward by
+      \(1.53\) units
+      so that the curve matched the vertical position
+      of my hand relative to the origin.
+    </p>
+
+    <p>
+      The final transformed function is:
+    </p>
+
+    <p>
+      \[
+      y=0.8\cos\bigl(-9.5(x-1.245)\bigr)+1.53
+      \]
+    </p>
+
+    <p>
+      This equation closely models the repeating motion
+      of the peace sign gesture shown in the photograph.
+    </p>
+
+  </div>
+
+  <div class="block">
+
+    <h3>Domain and Range</h3>
+
+    <p>
+      The domain of the function is restricted
+      to the visible section of the gesture captured in the photograph.
+      Based on the Desmos grid,
+      the relevant interval is:
+    </p>
+
+    <p>
+      \[
+      D=\{x\in\mathbb{R}\mid 0.207\le x\le1\}
+      \]
+    </p>
+
+    <p>
+      This restriction means the model is only intended
+      to represent the visible portion
+      of the wave shown in the image.
+    </p>
+
+    <p>
+      The parent cosine function
+      \( y=\cos(x) \)
+      has the range:
+    </p>
+
+    <p>
+      \[
+      R=\{y\in\mathbb{R}\mid -1\le y\le1\}
+      \]
+    </p>
+
+    <p>
+      After applying the transformations,
+      the amplitude became \(0.8\)
+      and the graph was shifted upward by \(1.53\) units.
+      Therefore, the new range is:
+    </p>
+
+    <p>
+      \[
+      R=\{y\in\mathbb{R}\mid 1.53-0.8\le y\le1.53+0.8\}
+      \]
+    </p>
+
+    <p>
+      Simplifying gives:
+    </p>
+
+    <p>
+      \[
+      R=\{y\in\mathbb{R}\mid 0.73\le y\le2.33\}
+      \]
+    </p>
+
+    <p>
+      This range matches the vertical movement
+      of my hand in the photograph,
+      from its lowest point at \(0.73\)
+      to its highest point at \(2.33\).
+    </p>
 
   </div>
 
